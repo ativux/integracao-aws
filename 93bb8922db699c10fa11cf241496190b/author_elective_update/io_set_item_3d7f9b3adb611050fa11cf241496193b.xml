@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
+    <io_set_item action="DELETE">
+        <order>0</order>
+        <sc_cat_item display_value="Solicitar Criação De Uma Nova Account">a8f84efedbe9dc10fa11cf2414961949</sc_cat_item>
+        <sys_class_name>io_set_item</sys_class_name>
+        <sys_created_by>richard@organizecloudlabs.com</sys_created_by>
+        <sys_created_on>2020-06-26 02:03:25</sys_created_on>
+        <sys_id>3d7f9b3adb611050fa11cf241496193b</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>OCL: User information INC.Solicitar Criação De Uma Nova Account</sys_name>
+        <sys_package display_value="Integracao AWS" source="x_gmeps_integracao">93bb8922db699c10fa11cf241496190b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</sys_scope>
+        <sys_update_name>io_set_item_3d7f9b3adb611050fa11cf241496193b</sys_update_name>
+        <sys_updated_by>richard@organizecloudlabs.com</sys_updated_by>
+        <sys_updated_on>2020-06-26 02:03:25</sys_updated_on>
+        <variable_set display_value="OCL: User information INC">b00624bbdba41c105c116390149619e5</variable_set>
+    </io_set_item>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</application>
+        <file_path/>
+        <instance_id>cf5b95b4dba4bb0007072f17d496195a</instance_id>
+        <instance_name>globosatdev</instance_name>
+        <name>io_set_item_3d7f9b3adb611050fa11cf241496193b</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item"><io_set_item action="INSERT_OR_UPDATE"><order>0</order><sc_cat_item display_value="Solicitar Criação De Uma Nova Account">a8f84efedbe9dc10fa11cf2414961949</sc_cat_item><sys_class_name>io_set_item</sys_class_name><sys_created_by>richard@organizecloudlabs.com</sys_created_by><sys_created_on>2020-06-26 02:03:25</sys_created_on><sys_id>3d7f9b3adb611050fa11cf241496193b</sys_id><sys_mod_count>1</sys_mod_count><sys_name>OCL: User information INC.Solicitar Criação De Uma Nova Account</sys_name><sys_package display_value="Integracao AWS" source="x_gmeps_integracao">93bb8922db699c10fa11cf241496190b</sys_package><sys_policy/><sys_scope display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</sys_scope><sys_update_name>io_set_item_3d7f9b3adb611050fa11cf241496193b</sys_update_name><sys_updated_by>richard@organizecloudlabs.com</sys_updated_by><sys_updated_on>2020-06-26 02:03:25</sys_updated_on><variable_set display_value="OCL: User information INC">b00624bbdba41c105c116390149619e5</variable_set></io_set_item></record_update>]]></payload>
+        <payload_hash>-433442795</payload_hash>
+        <record_name>OCL: User information INC.Solicitar Criação De Uma Nova Account</record_name>
+        <reverted_from/>
+        <source>13bb8922db699c10fa11cf241496190e</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>richard@organizecloudlabs.com</sys_created_by>
+        <sys_created_on>2020-06-26 02:03:25</sys_created_on>
+        <sys_id>317f9b3adb611050fa11cf2414961942</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>172ee5d839f0000001</sys_recorded_at>
+        <sys_updated_by>richard@organizecloudlabs.com</sys_updated_by>
+        <sys_updated_on>2020-06-26 02:03:25</sys_updated_on>
+        <type>Conjunto de Variáveis do Catálogo</type>
+        <update_guid>397f9b3a06611050d43210871893c941</update_guid>
+        <update_guid_history>397f9b3a06611050d43210871893c941:-433442795</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">9611a3badb611050fa11cf2414961950</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>richard@organizecloudlabs.com</sys_created_by>
+        <sys_created_on>2020-06-26 02:10:33</sys_created_on>
+        <sys_db_object display_value="" name="io_set_item">io_set_item</sys_db_object>
+        <sys_id>37002394676341749a06a33cdd816dc4</sys_id>
+        <sys_metadata>3d7f9b3adb611050fa11cf241496193b</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>OCL: User information INC.Solicitar Criação De Uma Nova Account</sys_name>
+        <sys_package display_value="Integracao AWS" source="x_gmeps_integracao">93bb8922db699c10fa11cf241496190b</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</sys_scope>
+        <sys_scope_delete display_value="">531ac7201c0f4f558fd580a9ff3fba51</sys_scope_delete>
+        <sys_update_name>io_set_item_3d7f9b3adb611050fa11cf241496193b</sys_update_name>
+        <sys_update_version display_value="io_set_item_3d7f9b3adb611050fa11cf241496193b">317f9b3adb611050fa11cf2414961942</sys_update_version>
+        <sys_updated_by>richard@organizecloudlabs.com</sys_updated_by>
+        <sys_updated_on>2020-06-26 02:10:33</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

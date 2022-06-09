@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>inherit_from_parent</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content/>
+        <function_name>Default GET</function_name>
+        <http_method>get</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Criar conta aws [ Default GET ]</qualified_name>
+        <rest_endpoint>richard@organizecloudlabs.com</rest_endpoint>
+        <rest_message display_value="Criar conta aws">c161596adb699c10fa11cf2414961901</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>richard@organizecloudlabs.com</sys_created_by>
+        <sys_created_on>2020-06-24 21:04:48</sys_created_on>
+        <sys_id>f581516adb699c10fa11cf24149619ad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Default GET</sys_name>
+        <sys_package display_value="Integracao AWS" source="x_gmeps_integracao">93bb8922db699c10fa11cf241496190b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</sys_scope>
+        <sys_update_name>sys_rest_message_fn_f581516adb699c10fa11cf24149619ad</sys_update_name>
+        <sys_updated_by>richard@organizecloudlabs.com</sys_updated_by>
+        <sys_updated_on>2020-06-24 21:04:48</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

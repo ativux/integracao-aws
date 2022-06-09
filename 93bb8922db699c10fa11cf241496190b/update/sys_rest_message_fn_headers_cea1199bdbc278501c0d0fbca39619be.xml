@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_headers">
+    <sys_rest_message_fn_headers action="INSERT_OR_UPDATE">
+        <name>Content-Type</name>
+        <rest_message_function display_value="POST Criar conta gcp">6238391edb8e38101c0d0fbca3961937</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_headers</sys_class_name>
+        <sys_created_by>vlfernan</sys_created_by>
+        <sys_created_on>2021-08-23 17:55:06</sys_created_on>
+        <sys_id>cea1199bdbc278501c0d0fbca39619be</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Content-Type</sys_name>
+        <sys_package display_value="Integracao AWS" source="x_gmeps_integracao">93bb8922db699c10fa11cf241496190b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</sys_scope>
+        <sys_update_name>sys_rest_message_fn_headers_cea1199bdbc278501c0d0fbca39619be</sys_update_name>
+        <sys_updated_by>vlfernan</sys_updated_by>
+        <sys_updated_on>2021-08-23 17:55:06</sys_updated_on>
+        <value>aplication/json</value>
+    </sys_rest_message_fn_headers>
+</record_update>

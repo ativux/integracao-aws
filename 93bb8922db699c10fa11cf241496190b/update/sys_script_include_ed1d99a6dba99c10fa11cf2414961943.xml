@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_gmeps_integracao.Criar_conta_AWS</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Criar_conta_AWS</name>
+        <script><![CDATA[var Criar_conta_AWS = Class.create();
+
+Criar_conta_AWS.prototype = {
+    initialize: function() {},
+    criarContaAWS: function(task) {
+        var gtBefore = new GlideDateTime();
+        var ips = 0;
+        var saopaulo_brasil = "";
+        var virginia_eua = "";
+        var regions = "";
+		var lowa_eua = "";
+		
+        var rede = "";
+        var item = task.request_item.cat_item;
+        var accountName = task.variables.account_id;
+
+        /*
+        accountName = accountName.replace(/[^A-zÀ-ú\s]/gi, '');
+        accountName = accountName.replace(/\s+/g, ' ').trim();
+        */
+
+       // var activity = task.variables.atividade.u_codigo;
+		var activity = "";
+		
+        var sysIdTask = task.sys_id;
+       // var ar = task.variables.ar.code.getDisplayValue();
+		var ar = "";
+		
+        var usuario = task.variables.technical_manager;
+        var provider = "Test";
+        var typeAccount = task.variables.environment;
+        var vpcIps = task.variables.vpc_corp;
+        var email = this._getUserEmail(usuario);
+
+        var action = task.variables.action;
+
+        var gasto = task.variables.gasto_mensal_previsto_em_reais_para_essa_conta;
+
+        var numero_chamado = task.request_item.number;
+
+        var workload_account = "";
+
+        var email_time = "";
+
+        var workload_gcp = "";
+        //
+        var workload_azure = "";
+        var workload_aws = "";
+
+        var workstream_gcp = "";
+        var iniciativa_gcp = "";
+		
+		var budget_alert = "";
+		
+		//  Ativididade
+		var projeto_activity = task.variables.projeto.value.getDisplayValue();
+		// AR
+		var centro_de_custo = task.variables.centro_de_custo.code.getDisplayValue();
+		
+		if(ar == ""){
+			ar = "00000";
+		}
+		
+		if(activity == ""){
+		activity = "0000";  
+		}
+		
+		if(item == "2589158c1b6b985097c0dca0f54bcbc6"){
+			var valor1 = task.variables.valor_1_gcp;
+			var valor2 = task.variables.valor_2_gcp;
+			var valor3 = task.variables.valor_3_gcp;
+			
+			if(task.variables.standart_percentage == "true"){
+			budget_alert = "default";
+			}else if(task.variables.not_alert_budget_gcp == "true"){
+			budget_alert = "false";
+			}else if(task.variables.personal_GCP == "true"){
+			budget_alert = (valor1 + "%," + valor2 + "%,"+ valor3 + "%").toString();
+			}
+		}
+
+        if (item == "2589158c1b6b985097c0dca0f54bcbc6") {
+            workstream_gcp = task.variables.Workstream;
+			iniciativa_gcp = "";
+            if (workstream_gcp == "CDN Internacional") {
+                iniciativa_gcp = task.variables.iniciativa_cdn_internacional;
+            } 
+			if (workstream_gcp == "Digital Migration") {
+                iniciativa_gcp = task.variables.iniciativa_digital_migration;
+            }
+			if (workstream_gcp == "Media Supply Chain") {
+                iniciativa_gcp = task.variables.iniciativa_media_supply_chain;
+            }
+			if (workstream_gcp == "Data Hub") {
+                iniciativa_gcp = task.variables.iniciativa_data_hub;
+            }
+			if (workstream_gcp == "POD Relicario") {
+                iniciativa_gcp = task.variables.iniciativa_pod_relicario;
+            }
+			if (workstream_gcp == "Extra BC") {
+                iniciativa_gcp = task.variables.iniciativa_extra_bc;
+            }
+			
+        }
+
+        if (item == "6dd62bf6dbfd5410fa11cf241496193e") {
+            workload_aws = task.variables.workload_aws;
+
+            if (workload_aws == "Sim, a aplicação já existe no On-premise") {
+                workload_aws = true;
+            } else {
+                workload_aws = false;
+            }
+            workload_account = task.variables.workload_that_will_run_on_the_account.toString();
+            //
+            workload_account = workload_account.replace(/[^A-zÀ-ú\s]/gi, '');
+            workload_account = workload_account.replace(/\s+/g, ' ').trim();
+            //
+
+            email_time = task.variables.email_time;
+        }
+
+		if (item == 'da0467991b6b109097c0dca0f54bcb22') {
+            virginia_eua = task.variables.Carolina_do_sul_eua;
+            workload_azure = task.variables.workload_azure;
+            if (workload_azure == "Sim, a aplicação já existe no On-premise") {
+                workload_azure = true;
+            } else {
+                workload_azure = false;	
+            }
+			workload_account = task.variables.workload_that_will_run_on_the_account.toString();
+            //
+            workload_account = workload_account.replace(/[^A-zÀ-ú\s]/gi, '');
+            workload_account = workload_account.replace(/\s+/g, ' ').trim();
+            //
+
+            email_time = task.variables.email_time;
+		}
+
+
+        if (ar == "") {
+            var account_code = task.variables.ar.account_number.getDisplayValue();
+            account_code = account_code.split('-');
+            account_code = account_code[0].trim();
+            ar = account_code;
+        }
+
+        if (item == "6dd62bf6dbfd5410fa11cf241496193e" && action == "Solicitar criação de nova account na AWS" || item == "da0467991b6b109097c0dca0f54bcb22" && action == "Solicitar criação de nova Subscription na Azure") {
+            accountName = task.variables.account_name;
+            /*
+            accountName = accountName.replace(/[^A-zÀ-ú\s]/gi, '');
+            accountName = accountName.replace(/\s+/g, ' ').trim();
+            */
+        }
+
+
+        if (item == '6dd62bf6dbfd5410fa11cf241496193e') {
+            provider = 'AWS';
+        } else if (item == '2589158c1b6b985097c0dca0f54bcbc6') {
+            provider = 'GCP';
+        } else {
+            provider = 'Azure';
+        }
+
+        rede = task.variables.rede_a_ser_utilizada;
+        if (rede == "HDG"){
+            rede = "digital";
+		}	
+        else if (rede == "HSC"){
+            rede = "tsuru";
+		}	
+        else if (rede == "Media"){
+            rede = "media";
+		}
+		else if(rede == "Composer"){
+				rede = "composer";
+		}
+        else{
+            rede = "default";
+		}	
+
+        if (task.variables.ips != "")
+            ips = task.variables.ips;
+
+        saopaulo_brasil = task.variables.saopaulo_brasil;
+		lowa_eua = task.variables.lowa_eua;
+		
+        if (item == '2589158c1b6b985097c0dca0f54bcbc6') {
+            virginia_eua = task.variables.Carolina_do_sul_eua;
+            workload_gcp = task.variables.workload_gcp;
+            if (workload_gcp == "true") {
+                workload_gcp = true;
+            } else {
+                workload_gcp = false;
+            }
+			//workload_account = task.variables.workload_that_will_run_on_the_account.toString();
+            // 			workload_account = workload_account.replace(/\s+/g, ' ').trim();
+            //
+          //  workload_account = workload_account.replace(/[^A-zÀ-ú\s]/gi, '');
+           // workload_account = workload_account.replace(/\s+/g, ' ').trim();
+            //
+
+            email_time = task.variables.email_time;
+        } else {
+            virginia_eua = task.variables.virginia_eua;
+        }
+
+        regions = this._getRegions(task.request_item.cat_item, saopaulo_brasil, virginia_eua, lowa_eua);
+
+        try {
+            var variable;
+            //if (item == '6dd62bf6dbfd5410fa11cf241496193e' || item == '2589158c1b6b985097c0dca0f54bcbc6') /*Form AWS ou GCP*/ {
+            if (item == '6dd62bf6dbfd5410fa11cf241496193e') /*Form AWS*/ {
+                variable = new sn_ws.RESTMessageV2('Criar conta aws', 'POST Criar conta aws');
+                variable.setStringParameterNoEscape('workload_aws', workload_aws);
+
+            } else if (item == '2589158c1b6b985097c0dca0f54bcbc6') /*Form GCP*/ {
+                gs.info("GCP - integração conta - entrou no if ");
+
+                variable = new sn_ws.RESTMessageV2('Criar conta aws', 'POST Criar conta gcp');
+                variable.setStringParameterNoEscape('workload_gcp', workload_gcp);
+                variable.setStringParameterNoEscape('workstream_gcp', workstream_gcp);
+                variable.setStringParameterNoEscape('iniciativa_gcp', iniciativa_gcp);
+
+
+            } else {
+                variable = new sn_ws.RESTMessageV2('Azure - Integração', 'POST Criar conta Azure');
+                variable.setStringParameterNoEscape('workload_azure', workload_azure);
+
+            }
+            variable.setStringParameterNoEscape('accountName', accountName);
+            variable.setStringParameterNoEscape('activity', activity);
+            variable.setStringParameterNoEscape('ar', ar);
+            variable.setStringParameterNoEscape('email', email);
+            variable.setStringParameterNoEscape('originSite', "dccm");
+            variable.setStringParameterNoEscape('provider', provider);
+            variable.setStringParameterNoEscape('regions', regions);
+            variable.setStringParameterNoEscape('typeAccount', typeAccount);
+            variable.setStringParameterNoEscape('vpcIps', ips);
+            variable.setStringParameterNoEscape('sysIdTask', sysIdTask);
+            variable.setStringParameterNoEscape('area', rede);
+            variable.setStringParameterNoEscape('budget', gasto);
+            variable.setStringParameterNoEscape('ritm', numero_chamado);
+            variable.setStringParameterNoEscape('email_time', email_time);
+			variable.setStringParameterNoEscape('workload_account', workload_account);
+			variable.setStringParameterNoEscape('budget_alert',budget_alert);
+			variable.setStringParameterNoEscape('projeto_activity',projeto_activity);
+			variable.setStringParameterNoEscape('centro_de_custo',centro_de_custo);
+
+
+
+            gs.info("GCP - integração conta - entrou no if + ");
+
+            var response = variable.execute();
+
+            var objCallBack = {
+                "endpoint": variable.getEndpoint(),
+                "httpStatus": response.getStatusCode(),
+                "responseBody": response.getBody(),
+                "requestBody": variable.getRequestBody()
+            };
+
+            var gtAfter = new GlideDateTime();
+            gtAfter.subtract(gtBefore.getNumericValue());
+            var responseTime = gtAfter.getNumericValue();
+
+            //registra a chamada e retorno da integração
+            var awsLog = this._log(task.getTableName(), task.getValue('sys_id'),
+                objCallBack.endpoint, objCallBack.httpStatus,
+                objCallBack.responseBody, objCallBack.requestBody, responseTime);
+
+            return awsLog;
+
+        } catch (ex) {
+            var message = ex.getMessage();
+        }
+    },
+
+
+    _log: function(table, record, endpoint, http_status, response_body, request_body, response_time) {
+        var grUAwsLog = new GlideRecord('x_gmeps_integracao_aws_log');
+
+        grUAwsLog.initialize();
+        grUAwsLog.setValue('table', table);
+        grUAwsLog.setValue('request', request_body);
+        grUAwsLog.setValue('endpoint', endpoint);
+        grUAwsLog.setValue('document_id', record);
+        grUAwsLog.setValue('response_time', response_time);
+        grUAwsLog.setValue('response', response_body);
+        grUAwsLog.setValue('http_status', http_status);
+        grUAwsLog.setValue('attempts', 0);
+        var logId = grUAwsLog.insert();
+        return logId;
+    },
+
+    reprocAWS: function(awsLog) {
+        var gtBefore = new GlideDateTime();
+        var grLog = new GlideRecord('x_gmeps_integracao_aws_log');
+        grLog.get(awsLog);
+        var requestBody = grLog.getValue('request');
+
+        var r = new sn_ws.RESTMessageV2('Criar conta aws', 'POST Criar conta aws');
+        r.setRequestBody(requestBody);
+
+        var response = r.execute();
+
+        var objCallBack = {
+            "httpStatus": response.getStatusCode(),
+            "responseBody": response.getBody()
+        };
+
+        var gtAfter = new GlideDateTime();
+        gtAfter.subtract(gtBefore.getNumericValue());
+        var responseTime = gtAfter.getNumericValue();
+
+        //atualiza o registro SCO Log com os novos resultados da integração
+        var attempts = parseInt(grLog.getValue('attempts')) + 1;
+        grLog.setValue('attempts', attempts);
+        grLog.setValue('http_status', objCallBack.httpStatus);
+        grLog.setValue('response', objCallBack.responseBody);
+        grLog.setValue('response_time', responseTime);
+        grLog.update();
+
+        return objCallBack.httpStatus;
+    },
+
+    createIncident: function(awslog) {
+        var recordProducerId = '4043ba9cdb9110d05c116390149619bf';
+
+        var request_body = {};
+
+        request_body = {
+            'variables': {
+
+            }
+        };
+
+        var incSysID = new global.GSUtils().createIncident(recordProducerId, request_body);
+
+        this.updateAWSLog('u_incident', incSysID, scoLog.getValue('sys_id'));
+    },
+
+    updateAWSLog: function(field, value, logId) {
+        var grAWSLog = new GlideRecord('x_gmeps_integracao_aws_log');
+        if (grAWSLog.get(logId)) {
+            grAWSLog.setValue(field, value);
+            grAWSLog.update();
+        }
+    },
+
+    _getUserEmail: function(usuario) {
+        var email = '';
+        var grUser = new GlideRecord('sys_user');
+
+        if (grUser.get(usuario)) {
+            email = grUser.getValue("email");
+        }
+        return email;
+    },
+
+    _getRegions: function(item, saopaulo_brasil, virginia_eua, lowa_eua) {
+        var regions = "";
+		
+		
+		
+        if (saopaulo_brasil == "true" && virginia_eua == "true" && item == '6dd62bf6dbfd5410fa11cf241496193e') { //sys_ID Administração do AWS
+            regions = '"sa-east-1", "us-east-1"';
+        } else if (saopaulo_brasil == "true" && virginia_eua == "true" && item == '2589158c1b6b985097c0dca0f54bcbc6') { //sys_ID Administração do GCP
+            regions = '"southamerica-east1", "us-east1"';
+        } else if (saopaulo_brasil == "true" && virginia_eua == "true" && item == 'da0467991b6b109097c0dca0f54bcb22') { //sys_ID Administração do Azure
+            regions = '"brazilsouth", "eastus2"';
+        } else {
+
+            if (virginia_eua == "true" && item == '6dd62bf6dbfd5410fa11cf241496193e') {
+                regions = '"us-east-1"'; //sys_ID Administração do AWS 
+            }
+
+            if (saopaulo_brasil == "true" && item == '6dd62bf6dbfd5410fa11cf241496193e') {
+                regions = '"sa-east-1"'; //sys_ID Administração do AWS
+            }
+
+            if (virginia_eua == "true" && item == '2589158c1b6b985097c0dca0f54bcbc6') {
+                regions = '"us-east1"'; //sys_ID Administração do GCP
+            }
+
+            if (saopaulo_brasil == "true" && item == '2589158c1b6b985097c0dca0f54bcbc6') {
+                regions = '"southamerica-east1"'; //sys_ID Administração do GCP
+            }
+			
+			if(lowa_eua == "true" && item == '2589158c1b6b985097c0dca0f54bcbc6'){
+			regions = '"us-central1"';   //sys_ID Administração do GCP
+			}
+			
+            if (virginia_eua == "true" && item == 'da0467991b6b109097c0dca0f54bcb22') {
+                regions = '"eastus2"'; //sys_ID Administração do Azure
+            }
+
+            if (saopaulo_brasil == "true" && item == 'da0467991b6b109097c0dca0f54bcb22') {
+                regions = '"brazilsouth"'; //sys_ID Administração do Azure
+            }
+        }
+		
+		if(saopaulo_brasil == "true" && virginia_eua == "true" && lowa_eua == "true" && item == '2589158c1b6b985097c0dca0f54bcbc6'){ //sys_ID Administração do GCP
+		regions = '"southamerica-east1", "us-east1", "us-central1"';
+		}else if(lowa_eua == "true" && virginia_eua == "true" && item == '2589158c1b6b985097c0dca0f54bcbc6'){
+		regions = '"us-east1", "us-central1"';		 
+		}else if(lowa_eua == "true" && saopaulo_brasil == "true" && item == '2589158c1b6b985097c0dca0f54bcbc6'){
+		regions = '"southamerica-east1", "us-central1"';
+		}
+		
+        return regions;
+    },
+
+    type: 'Criar_conta_AWS'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>richard@organizecloudlabs.com</sys_created_by>
+        <sys_created_on>2020-06-24 21:55:39</sys_created_on>
+        <sys_id>ed1d99a6dba99c10fa11cf2414961943</sys_id>
+        <sys_mod_count>174</sys_mod_count>
+        <sys_name>Criar_conta_AWS</sys_name>
+        <sys_package display_value="Integracao AWS" source="x_gmeps_integracao">93bb8922db699c10fa11cf241496190b</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</sys_scope>
+        <sys_update_name>sys_script_include_ed1d99a6dba99c10fa11cf2414961943</sys_update_name>
+        <sys_updated_by>ploiola</sys_updated_by>
+        <sys_updated_on>2022-02-17 14:32:29</sys_updated_on>
+    </sys_script_include>
+</record_update>

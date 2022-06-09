@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="syslog0000" label="aws_log" max_length="40" name="x_gmeps_integracao_aws_log" sizeclass="0" type="collection">
+        <element label="Attempts" max_length="40" name="attempts" type="integer"/>
+        <element dependent="table" dependent_on_field="table" label="Document ID" max_length="32" name="document_id" type="document_id" use_dependent_field="true"/>
+        <element label="Endpoint" max_length="1024" name="endpoint" type="url"/>
+        <element label="HTTP Status" max_length="40" name="http_status" type="string"/>
+        <element label="Request" max_length="4000" name="request" type="string"/>
+        <element label="Response" max_length="4000" name="response" type="string"/>
+        <element label="Response Time" max_length="40" name="response_time" type="integer"/>
+        <element label="table" max_length="80" name="table" type="table_name"/>
+        <index name="index">
+            <element name="document_id"/>
+        </index>
+    </element>
+</database>

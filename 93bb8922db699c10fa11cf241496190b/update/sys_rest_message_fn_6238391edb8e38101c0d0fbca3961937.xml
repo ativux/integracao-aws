@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn">
+    <sys_rest_message_fn action="INSERT_OR_UPDATE">
+        <authentication_type>no_authentication</authentication_type>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <content>{&#13;
+  "data": {&#13;
+    "cc": "${centro_de_custo}",&#13;
+    "regions": [&#13;
+      ${regions}&#13;
+    ],&#13;
+  "provider": "${provider}",&#13;
+  "projeto-activity": "${projeto_activity}",&#13;
+  "accountName": "${accountName}",&#13;
+  "vpcIps": ${vpcIps},&#13;
+  "typeAccount": "${typeAccount}",&#13;
+  "originSite": "${originSite}",&#13;
+  "email": "${email}",&#13;
+  "email_time": "${email_time}",&#13;
+  "sys_id": "${sysIdTask}",&#13;
+  "area":"${area}",&#13;
+  "budget":"${budget}",&#13;
+  "ritm":"${ritm}",&#13;
+ "workload_gcp":"${workload_gcp}",&#13;
+"workstream":{&#13;
+"name": "${workstream_gcp}",&#13;
+"iniciativa":"${iniciativa_gcp}"&#13;
+},&#13;
+"budget_alert":"${budget_alert}"&#13;
+}&#13;
+}</content>
+        <function_name>POST Criar conta gcp</function_name>
+        <http_method>post</http_method>
+        <lock>false</lock>
+        <oauth2_profile/>
+        <protocol_name/>
+        <qualified_name>Criar conta aws [ POST Criar conta gcp ]</qualified_name>
+        <rest_endpoint>https://xpgh03oee6.execute-api.us-east-1.amazonaws.com/dev/</rest_endpoint>
+        <rest_message display_value="Criar conta aws">c161596adb699c10fa11cf2414961901</rest_message>
+        <sys_class_name>sys_rest_message_fn</sys_class_name>
+        <sys_created_by>ccaires</sys_created_by>
+        <sys_created_on>2021-08-20 18:09:06</sys_created_on>
+        <sys_id>6238391edb8e38101c0d0fbca3961937</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>POST Criar conta gcp</sys_name>
+        <sys_package display_value="Integracao AWS" source="x_gmeps_integracao">93bb8922db699c10fa11cf241496190b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</sys_scope>
+        <sys_update_name>sys_rest_message_fn_6238391edb8e38101c0d0fbca3961937</sys_update_name>
+        <sys_updated_by>ploiola</sys_updated_by>
+        <sys_updated_on>2022-02-18 15:23:46</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_mutual_auth>false</use_mutual_auth>
+    </sys_rest_message_fn>
+</record_update>

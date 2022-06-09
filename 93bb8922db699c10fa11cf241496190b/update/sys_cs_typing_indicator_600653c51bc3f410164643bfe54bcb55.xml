@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_cs_typing_indicator">
+    <sys_cs_typing_indicator action="INSERT_OR_UPDATE">
+        <conversation display_value="Created 05-10-2021 17:49:14">a8065f851bc3f410164643bfe54bcb02</conversation>
+        <enabled>false</enabled>
+        <sys_class_name>sys_cs_typing_indicator</sys_class_name>
+        <sys_created_by>ploiola</sys_created_by>
+        <sys_created_on>2021-10-05 20:49:14</sys_created_on>
+        <sys_id>600653c51bc3f410164643bfe54bcb55</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Integracao AWS" source="x_gmeps_integracao">93bb8922db699c10fa11cf241496190b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</sys_scope>
+        <sys_update_name>sys_cs_typing_indicator_600653c51bc3f410164643bfe54bcb55</sys_update_name>
+        <sys_updated_by>ploiola</sys_updated_by>
+        <sys_updated_on>2021-10-05 20:49:48</sys_updated_on>
+    </sys_cs_typing_indicator>
+</record_update>

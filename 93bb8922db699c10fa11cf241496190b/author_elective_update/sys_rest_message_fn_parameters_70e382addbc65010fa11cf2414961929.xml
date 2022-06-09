@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="DELETE">
+        <name>key</name>
+        <rest_message_function display_value="POST Criar conta aws ">3da1596adb699c10fa11cf2414961996</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>richard@organizecloudlabs.com</sys_created_by>
+        <sys_created_on>2020-07-16 18:42:24</sys_created_on>
+        <sys_id>70e382addbc65010fa11cf2414961929</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>key</sys_name>
+        <sys_package display_value="Integracao AWS" source="x_gmeps_integracao">93bb8922db699c10fa11cf241496190b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_70e382addbc65010fa11cf2414961929</sys_update_name>
+        <sys_updated_by>richard@organizecloudlabs.com</sys_updated_by>
+        <sys_updated_on>2020-07-16 18:42:24</sys_updated_on>
+        <type>string</type>
+        <value/>
+    </sys_rest_message_fn_parameters>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</application>
+        <file_path/>
+        <instance_id>cf5b95b4dba4bb0007072f17d496195a</instance_id>
+        <instance_name>globosatdev</instance_name>
+        <name>sys_rest_message_fn_parameters_70e382addbc65010fa11cf2414961929</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_rest_message_fn_parameters"><sys_rest_message_fn_parameters action="INSERT_OR_UPDATE"><name>key</name><rest_message_function display_value="POST Criar conta aws ">3da1596adb699c10fa11cf2414961996</rest_message_function><sys_class_name>sys_rest_message_fn_parameters</sys_class_name><sys_created_by>richard@organizecloudlabs.com</sys_created_by><sys_created_on>2020-07-16 18:42:24</sys_created_on><sys_id>70e382addbc65010fa11cf2414961929</sys_id><sys_mod_count>0</sys_mod_count><sys_name>key</sys_name><sys_package display_value="Integracao AWS" source="x_gmeps_integracao">93bb8922db699c10fa11cf241496190b</sys_package><sys_policy/><sys_scope display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</sys_scope><sys_update_name>sys_rest_message_fn_parameters_70e382addbc65010fa11cf2414961929</sys_update_name><sys_updated_by>richard@organizecloudlabs.com</sys_updated_by><sys_updated_on>2020-07-16 18:42:24</sys_updated_on><type>string</type><value/></sys_rest_message_fn_parameters></record_update>]]></payload>
+        <payload_hash>1970216337</payload_hash>
+        <record_name>key</record_name>
+        <reverted_from/>
+        <source>f214ce67dbf51810fa11cf24149619af</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>richard@organizecloudlabs.com</sys_created_by>
+        <sys_created_on>2020-07-16 18:42:24</sys_created_on>
+        <sys_id>dee342addbc65010fa11cf24149619af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17358ef4c330000001</sys_recorded_at>
+        <sys_updated_by>richard@organizecloudlabs.com</sys_updated_by>
+        <sys_updated_on>2020-07-16 18:42:24</sys_updated_on>
+        <type>Variable Substitutions</type>
+        <update_guid>d6e342add6c650102032fdb1d26d2baf</update_guid>
+        <update_guid_history>d6e342add6c650102032fdb1d26d2baf:1970216337</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>richard@organizecloudlabs.com</sys_created_by>
+        <sys_created_on>2020-07-21 16:29:56</sys_created_on>
+        <sys_db_object display_value="" name="sys_rest_message_fn_parameters">sys_rest_message_fn_parameters</sys_db_object>
+        <sys_id>46d6f754b36540089764e15af5fd3c90</sys_id>
+        <sys_metadata>70e382addbc65010fa11cf2414961929</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>key</sys_name>
+        <sys_package display_value="Integracao AWS" source="x_gmeps_integracao">93bb8922db699c10fa11cf241496190b</sys_package>
+        <sys_parent display_value="POST Criar conta aws">3da1596adb699c10fa11cf2414961996</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Integracao AWS">93bb8922db699c10fa11cf241496190b</sys_scope>
+        <sys_scope_delete display_value="">531ac7201c0f4f558fd580a9ff3fba51</sys_scope_delete>
+        <sys_update_name>sys_rest_message_fn_parameters_70e382addbc65010fa11cf2414961929</sys_update_name>
+        <sys_update_version display_value="sys_rest_message_fn_parameters_70e382addbc65010fa11cf2414961929">dee342addbc65010fa11cf24149619af</sys_update_version>
+        <sys_updated_by>richard@organizecloudlabs.com</sys_updated_by>
+        <sys_updated_on>2020-07-21 16:29:56</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
